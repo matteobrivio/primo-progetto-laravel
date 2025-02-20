@@ -49,7 +49,20 @@
     </div>
   </div>
 </nav>
-    <h1>contatti</h1>
+    <h1>{{$titolo}}</h1>
+    <div class="container">
+      @foreach($services as $service)
+      <div class="card text-center justify-content-center align-items-center">
+        <img src="https://picsum.photos/500/500?random={{$loop->iteration}}" class="w-25" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{$service}}</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+        <a href="/contatti/{{$service}}" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  @endforeach
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

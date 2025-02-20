@@ -11,5 +11,12 @@ Route::get('/chi-sono', function () {
 });
 
 Route::get('/contatti', function () {
-    return view('contatti');
+
+    $services = ['web', 'market', 'consulenza'];
+    $titolo = 'i miei servizi';
+    return view('contatti', ['services'=>$services, 'titolo'=>$titolo]);
+});
+
+Route::get('/contatti/{parametro}', function($parametro){
+    return $parametro;
 });
